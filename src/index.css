@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*
+{
+  font-family: gilroy;
+}
+.request-button {
+  position: relative;
+  overflow: hidden;
+  background-color: white; /* Background color of the button */
+  border: 2px solid black; /* Border of the button */
+  padding: 10px 20px; /* Adjust padding as needed */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  color: black; /* Text color */
+  font-size: 16px; /* Adjust font size as needed */
+  text-align: center; /* Center text inside the button */
+  display: inline-block; /* Ensure button size fits text */
+  /* Add transition to smoothen the hover effect */
+  transition: color 0.4s ease, border-color 0.4s ease;
+
+}
+
+.request-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: black;
+  transition: width 0.4s ease; /* Transition effect for width */
+  z-index: 0; /* Ensure the pseudo-element is below the text */
+}
+
+.request-button:hover::before {
+  width: 100%; /* Expand width on hover */
+}
+
+.request-button:hover {
+  color: white; /* Change text color on hover */
+  border-color: transparent; /* Optional: Hide border color on hover */
+}
+
+.request-button span {
+  position: relative;
+  z-index: 1; /* Ensure text is above the pseudo-element */
+}
